@@ -1,0 +1,13 @@
+name: Sync to GitLab
+on: [push, delete]
+jobs:
+  gitlab-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: yesolutions/mirror-action@master
+        with:
+          REMOTE: "https://oauth2:${{ secrets.GITLAB_TOKEN }}@gitlab.cci.drexel.edu/cid/2526/ws1023/63/gc1/midevilmadness"
+          GIT_PUSH_ARGS: "--tags --force --prune"
