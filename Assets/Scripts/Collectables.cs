@@ -17,9 +17,12 @@ public class Collectables : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("This is a collectable!");
-        coins = coins + 1;
-        Debug.Log("Coins: " + coins);
-        Destroy(gameObject);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("This is a collectable!");
+            coins = coins + 1;
+            Debug.Log("Coins: " + coins);
+            Destroy(gameObject);
+        }
     }
 }

@@ -75,7 +75,7 @@ public class PlayerHealthBar : MonoBehaviour{
 			
 		} else if(curHP < maxHP){
 			
-			if(percentage <= 50  percentage >= 25){
+			if(percentage <= 50 & percentage >= 25){
 				HUDSkin.normal.textColor = Color.yellow;
 				HUDSkin.fontStyle = FontStyle.BoldAndItalic;
 				HUDSkin.fontSize = 16;
