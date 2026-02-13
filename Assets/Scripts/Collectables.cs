@@ -3,6 +3,7 @@ using UnityEngine;
 public class Collectables : MonoBehaviour
 {
     public static int coins = 0;
+    public AudioPlayer audioPlayer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +20,7 @@ public class Collectables : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            audioPlayer.PlaySoundEffect();
             Debug.Log("This is a collectable!");
             coins = coins + 1;
             Debug.Log("Coins: " + coins);
