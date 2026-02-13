@@ -47,7 +47,6 @@ public class EmemyMovement : MonoBehaviour
             {
                 childTransform.localPosition = positionLeft;
             }
-            Debug.Log("Player entered the trigger area!");
             xDir *= -1;
             //rb.linearVelocity = new Vector2(xDir * movementSpeed, 0);
             // parentRb.linearVelocity = new Vector2(xDir * movementSpeed, 0);
