@@ -1,9 +1,11 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
+    bool isFacingRight = true;
 
     public Rigidbody2D rb;
     [Header("Movement")]
