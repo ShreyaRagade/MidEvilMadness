@@ -26,8 +26,6 @@ public class Movement : MonoBehaviour
     public float maxFallSpeed = 18f;
     public float fallSpeedMultiplier = 1f;
 
-
-    // Update is called once per frame
     void Update()
     {
         //Vector2 newVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocityY);
@@ -37,7 +35,7 @@ public class Movement : MonoBehaviour
     }
     private void Gravity()
     {
-        if (rb.linearVelocityX < 0)
+        if (rb.linearVelocityY < 0)
         {
             rb.gravityScale = baseGravity * fallSpeedMultiplier;
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Max(rb.linearVelocity.y, -maxFallSpeed));
@@ -51,19 +49,18 @@ public class Movement : MonoBehaviour
     {
 
         horizontalMovement = context.ReadValue<Vector2>().x;
+        
     }
-
     public void Jump(InputAction.CallbackContext context)
     {
-
-
-        if (context.performed)
+        if (isGrounded())
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocityX, jumpPower);
+            if (context.performed)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocityX, jumpPower);
 
+            }
         }
-
-
     }
 
     private bool isGrounded()
@@ -83,6 +80,6 @@ public class Movement : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.white;
-        Gizmos.DrawCube(groundCheckPos.position, groundCheckSize);
+        Gizmos.DrawWireCube(groundCheckPos.position, groundCheckSize);
     }
 }
