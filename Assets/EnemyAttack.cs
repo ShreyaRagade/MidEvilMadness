@@ -12,7 +12,7 @@ public class EnemyAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other){
         if(other.CompareTag("Enemy")){
-            //Debug.Log("Enemy Player Collided");
+            Debug.Log("Enemy Player Collided");
             rb = GetComponent<Rigidbody2D>();   
 
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, upVelocity);
