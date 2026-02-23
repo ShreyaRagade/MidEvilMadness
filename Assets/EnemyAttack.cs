@@ -7,13 +7,13 @@ public class EnemyAttack : MonoBehaviour
     private Rigidbody2D rb; 
 
     void Start(){
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();   
+        rb = GetComponent<Rigidbody2D>();   
     }
 
     private void OnTriggerEnter2D(Collider2D other){
-        if(other.CompareTag("Enemy")){
-            Debug.Log("Enemy Player Collided");
-            rb = GetComponent<Rigidbody2D>();   
+        //Debug.Log(other.tag);
+        if(other.CompareTag("Enemy") || other.CompareTag("EnemyAttack")){
+            rb = GetComponent<Rigidbody2D>();      
 
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, upVelocity);
             //playerHeath -= 1;

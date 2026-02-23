@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EmemyMovement : MonoBehaviour
 {
-    private float movementSpeed = 5f;
+    private float movementSpeed = 4f;
 
     private Vector2 movementDirection;
 
@@ -39,14 +39,19 @@ public class EmemyMovement : MonoBehaviour
         // Check if the object that entered has a specific tag
         if (other.gameObject.CompareTag("Floor"))// (enemy.CompareTag("floor"))
         {
-            if (childTransform.localPosition == positionLeft)
+            //Debug.Log("Enemy Movement ");
+            foreach (Transform child in transform.parent)
             {
-                childTransform.localPosition = positionRight;
+                if (child.transform.localPosition == positionLeft)
+                {
+                    child.transform.localPosition = positionRight;
+                }
+                else
+                {
+                    child.transform.localPosition = positionLeft;
+                }
             }
-            else
-            {
-                childTransform.localPosition = positionLeft;
-            }
+            
             xDir *= -1;
             //rb.linearVelocity = new Vector2(xDir * movementSpeed, 0);
             // parentRb.linearVelocity = new Vector2(xDir * movementSpeed, 0);
