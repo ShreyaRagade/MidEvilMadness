@@ -46,7 +46,7 @@ public class EmemyMovement : MonoBehaviour
                 {
                     child.transform.localPosition = positionRight;
                 }
-                else
+                else if(child.transform.localPosition == positionRight)
                 {
                     child.transform.localPosition = positionLeft;
                 }
