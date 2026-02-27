@@ -4,6 +4,7 @@ public class Health: MonoBehaviour
 {   
    public static Health HealthInstance;
    public int healthAmount = 100;
+   public int MaxHealth = 100;
 
     void Awake()
     {
