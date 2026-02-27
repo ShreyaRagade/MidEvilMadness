@@ -21,7 +21,6 @@ public class Collectables : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             audioPlayer.PlaySoundEffect();
-            Debug.Log("This is a collectable!");
             coins = coins + 1;
             Debug.Log("Coins: " + coins);
             Destroy(gameObject);

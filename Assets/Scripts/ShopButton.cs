@@ -13,7 +13,7 @@ public class ShopButton : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             inShop = true;
-            Debug.Log(inShop);
+            Debug.Log("Welcome To The Shop!");
             
         }
     }
@@ -23,22 +23,28 @@ public class ShopButton : MonoBehaviour
     }
     public void Interact(InputAction.CallbackContext context)
     {
+        if (!context.performed) return;
+        
         if (inShop)
         {
-            Debug.Log("Welcome To The Shop!");
-            if(Collectables.coins > 5 && (Health.healthAmount < Health.MaxHealth))
+            if(Collectables.coins >= 5 && (health.healthAmount < health.MaxHealth))
             {
                 Collectables.coins -= 5;
-                Health.healthAmount += 10;
-                if(Health.healthAmount > Health.MaxHealth)
+                health.healthAmount += 10;
+                if(health.healthAmount > health.MaxHealth)
                 {
-                    health.healthAmount = Health.MaxHealth;
+                    health.healthAmount = health.MaxHealth;
                 }
-                Debug.Log("You now only have " + Collectables.coins + " Coins");
+                Debug.Log("You now have " + Collectables.coins + " Coins!");
+                Debug.Log("You now have " + health.healthAmount + " HP!");
+            }
+            else if(Collectables.coins < 5)
+            {
+                Debug.Log("Insufficient Funds! >:(");
             }
             else
             {
-                Debug.Log("Insufficient Funds! >:(");
+                Debug.Log("Already at Max Health");
             }
         }
     }
