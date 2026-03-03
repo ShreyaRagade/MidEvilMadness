@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a805bb2f12c3e74cb83669360572cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioPlayer
-  soundEffectClip: {fileID: 8300000, guid: 188b6f4fb6b626e4a900687a94f0b452, type: 3}
+  soundEffectClip: {fileID: 8300000, guid: c32594d54efd1614badaf622ac444821, type: 3}
 --- !u!82 &434242301
 AudioSource:
   m_ObjectHideFlags: 0
@@ -298,7 +298,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 188b6f4fb6b626e4a900687a94f0b452, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -886,7 +886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a805bb2f12c3e74cb83669360572cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioPlayer
-  soundEffectClip: {fileID: 8300000, guid: 188b6f4fb6b626e4a900687a94f0b452, type: 3}
+  soundEffectClip: {fileID: 8300000, guid: c32594d54efd1614badaf622ac444821, type: 3}
 --- !u!114 &769417331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2003,7 +2003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a805bb2f12c3e74cb83669360572cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioPlayer
-  soundEffectClip: {fileID: 8300000, guid: 188b6f4fb6b626e4a900687a94f0b452, type: 3}
+  soundEffectClip: {fileID: 8300000, guid: c32594d54efd1614badaf622ac444821, type: 3}
 --- !u!114 &1377290841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2672,7 +2672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a805bb2f12c3e74cb83669360572cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioPlayer
-  soundEffectClip: {fileID: 8300000, guid: 188b6f4fb6b626e4a900687a94f0b452, type: 3}
+  soundEffectClip: {fileID: 8300000, guid: c32594d54efd1614badaf622ac444821, type: 3}
 --- !u!70 &1681661070
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4561,7 +4561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a805bb2f12c3e74cb83669360572cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioPlayer
-  soundEffectClip: {fileID: 8300000, guid: 188b6f4fb6b626e4a900687a94f0b452, type: 3}
+  soundEffectClip: {fileID: 8300000, guid: c32594d54efd1614badaf622ac444821, type: 3}
 --- !u!114 &2032272384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4782,9 +4782,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e22810b6254217d43b45abcc577fc411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EmemyMovement
-  childTransform: {fileID: 2036052461}
-  positionLeft: {x: -0.1, y: 0, z: 0}
-  positionRight: {x: 0.1, y: 0, z: 0}
 --- !u!61 &2036052465
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4900,7 +4897,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 188b6f4fb6b626e4a900687a94f0b452, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -4998,7 +4995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a805bb2f12c3e74cb83669360572cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioPlayer
-  soundEffectClip: {fileID: 0}
+  soundEffectClip: {fileID: 8300000, guid: c32594d54efd1614badaf622ac444821, type: 3}
 --- !u!114 &2036254721
 MonoBehaviour:
   m_ObjectHideFlags: 0
