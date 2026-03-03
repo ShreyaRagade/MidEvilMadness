@@ -9,9 +9,9 @@ public class EmemyMovement : MonoBehaviour
     //private Rigidbody2D rb; 
     private Rigidbody2D parentRb;
 
-    public Transform childTransform;
-    public Vector3 positionLeft = new Vector3(-0.1f, 0, 0);
-    public Vector3 positionRight = new Vector3(0.1f, 0, 0);
+    private Transform childTransform;
+    private Vector3 positionLeft = new Vector3(-0.1f, 0, 0);
+    private Vector3 positionRight = new Vector3(0.1f, 0, 0);
 
 
     private int xDir = -1; // -1 = left, 1 = right
