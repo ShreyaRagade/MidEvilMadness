@@ -7,6 +7,7 @@ public class DashImplementation : MonoBehaviour
     public Rigidbody2D rb;
     bool isFacingRight = true;
     public ParticleSystem smokeFX;
+    Rigidbody2D rigid;
 
 
     [Header("Dashing")]
@@ -28,6 +29,8 @@ public class DashImplementation : MonoBehaviour
     public float baseGravity = 2f;
     public float maxFallSpeed = 18f;
     public float fallGravityMult = 2f;
+
+    LayerMask lmWalls;
     private void Start()
     {
         trailRenderer = GetComponent<TrailRenderer>();
@@ -43,6 +46,48 @@ public class DashImplementation : MonoBehaviour
     }
     private IEnumerator DashCoroutine()
     {
+        Vector2 v2GroundedBoxCheckPosition = (Vector2)transform.position + new Vector2(0, -0.01f);
+        Vector2 v2GroundedBoxCheckScale = (Vector2)transform.localScale + new Vector2(-0.02f, 0);
+        bool bGrounded = Physics2D.OverlapBox(v2GroundedBoxCheckPosition, v2GroundedBoxCheckScale, 0, lmWalls);
+
+        float fGroundedRemember = 0;
+       
+        float fGroundedRememberTime = 0.25f;
+
+        fGroundedRemember -= Time.deltaTime;
+        if (bGrounded)
+        {
+            fGroundedRemember = fGroundedRememberTime;
+        }
+
+        float fJumpPressedRemember = 0;
+     
+        float fJumpPressedRememberTime = 0.2f;
+
+        float fCutJumpHeight = 0.5f;
+
+        float fJumpVelocity = 5;
+
+        fJumpPressedRemember -= Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            fJumpPressedRemember = fJumpPressedRememberTime;
+        }
+
+        if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            if (rigid.linearVelocity.y > 0)
+            {
+                rigid.linearVelocity = new Vector2(rigid.linearVelocity.x, rigid.linearVelocity.y * fCutJumpHeight);
+            }
+        }
+
+        if ((fJumpPressedRemember > 0) && (fGroundedRemember > 0))
+        {
+            fJumpPressedRemember = 0;
+            fGroundedRemember = 0;
+            rigid.linearVelocity = new Vector2(rigid.linearVelocity.x, fJumpVelocity);
+        }
         Physics2D.IgnoreLayerCollision(7, 8, true);
         canDash = false;
         isDashing = true;

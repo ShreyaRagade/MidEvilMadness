@@ -65,20 +65,6 @@ public class Movement : MonoBehaviour
         }
     }
 
-    private bool isGrounded()
-    {
-
-        if (Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0, groundLayer))
-        {
-
-            return true;
-
-        }
-
-        return false;
-
-    }
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.white;
