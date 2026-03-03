@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private float upVelocity = 20f;
+    public float upVelocity = 20f;
     private Rigidbody2D rb; 
     public Health health;
 
