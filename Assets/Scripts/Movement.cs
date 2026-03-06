@@ -1,3 +1,8 @@
+<<<<<<< Updated upstream
+=======
+using System;
+using System.Collections;
+>>>>>>> Stashed changes
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,6 +11,7 @@ public class Movement : MonoBehaviour
 {
 
     public Rigidbody2D rb;
+    Animator animator;
     [Header("Movement")]
     public float moveSpeed = 5f;
 
@@ -26,14 +32,25 @@ public class Movement : MonoBehaviour
     public float maxFallSpeed = 18f;
     public float fallSpeedMultiplier = 1f;
 
+<<<<<<< Updated upstream
 
     // Update is called once per frame
+=======
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+    }
+>>>>>>> Stashed changes
     void Update()
     {
         //Vector2 newVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocityY);
         rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocityY);
         Gravity();
-
+        animator.SetBool("isJumping", !isGrounded());
+        animator.SetFloat("xVel", Math.Abs(rb.linearVelocityX));
+        animator.SetFloat("yVel", rb.linearVelocityY);
+       
     }
     private void Gravity()
     {
@@ -49,12 +66,20 @@ public class Movement : MonoBehaviour
     }
     public void Move(InputAction.CallbackContext context)
     {
-
         horizontalMovement = context.ReadValue<Vector2>().x;
     }
 
     public void Jump(InputAction.CallbackContext context)
     {
+<<<<<<< Updated upstream
+=======
+       
+        if (isGrounded())
+        {
+            if (context.performed)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocityX, jumpPower);
+>>>>>>> Stashed changes
 
 
         if (context.performed)
@@ -62,6 +87,7 @@ public class Movement : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocityX, jumpPower);
 
         }
+<<<<<<< Updated upstream
 
 
     }
@@ -78,8 +104,30 @@ public class Movement : MonoBehaviour
 
         return false;
 
+=======
+           
+        
+>>>>>>> Stashed changes
     }
 
+    private bool isGrounded()
+    {
+
+        if (Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0, groundLayer))
+        {
+
+            Debug.Log("grounded");
+            return true;
+            
+
+        }
+
+        Debug.Log("Not grounded");
+        animator.SetBool("isJumping", !isGrounded());
+        return false;
+
+
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.white;
