@@ -9,7 +9,6 @@ public class UI : MonoBehaviour
     void Start()
     {
         playerHealth = Health.HealthInstance.healthAmount;
-        healthText.text = Health.HealthInstance.healthAmount.ToString();
         healthText.text = playerHealth.ToString();
     }
 
@@ -18,6 +17,6 @@ public class UI : MonoBehaviour
     {
         playerHealth = Health.HealthInstance.healthAmount;
         healthText.text = "Health: " + playerHealth.ToString();
-        //healthText.text = "Health: " + Health.HealthInstance.healthAmount;
+        //healthText.text = "Health:" + Health.HealthInstance.healthAmount;
     }
 }
