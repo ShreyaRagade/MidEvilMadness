@@ -56,12 +56,15 @@ public class Movement : MonoBehaviour
     public void Jump(InputAction.CallbackContext context)
     {
 
-
-        if (context.performed)
+        if (isGrounded())
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocityX, jumpPower);
+            if (context.performed)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocityX, jumpPower);
 
+            }
         }
+       
 
 
     }
