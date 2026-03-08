@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,6 +7,9 @@ public class Movement : MonoBehaviour
 {
 
     public Rigidbody2D rb;
+    Animator animator;
+    bool isFacingRight = true;
+
     [Header("Movement")]
     public float moveSpeed = 5f;
 
@@ -26,17 +30,32 @@ public class Movement : MonoBehaviour
     public float maxFallSpeed = 18f;
     public float fallSpeedMultiplier = 1f;
 
-
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        Debug.Log(animator);
+    }
     void Update()
     {
-        //Vector2 newVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocityY);
-        rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocityY);
+        rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
+        Flip();
+        bool grounded = isGrounded();
+        
         Gravity();
 
+        
+        Debug.Log(grounded);
+
+        animator.SetFloat("xVel", Mathf.Abs(rb.linearVelocity.x));
+       
+        if (!grounded)
+        {
+            animator.SetFloat("yVel", rb.linearVelocity.y);
+        }
     }
     private void Gravity()
     {
-        if (rb.linearVelocityX < 0)
+        if (rb.linearVelocityY < 0)
         {
             rb.gravityScale = baseGravity * fallSpeedMultiplier;
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Max(rb.linearVelocity.y, -maxFallSpeed));
@@ -50,19 +69,20 @@ public class Movement : MonoBehaviour
     {
 
         horizontalMovement = context.ReadValue<Vector2>().x;
+        
     }
 
     public void Jump(InputAction.CallbackContext context)
     {
 
-        if (isGrounded())
-        {
-            if (context.performed)
+       
+            if (context.performed && isGrounded())
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocityX, jumpPower);
+               // animator.SetBool("isJumping", !isGrounded());
 
             }
-        }
+        
 
 
 
@@ -70,16 +90,28 @@ public class Movement : MonoBehaviour
 
     private bool isGrounded()
     {
+        bool grounded = Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0, groundLayer);
 
-        if (Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0, groundLayer))
+        animator.SetBool("isJumping", !grounded);
+
+       // snap yVel to 0 immediately on landing
+        if (grounded)
         {
-
-            return true;
-
+            animator.SetFloat("yVel", 0f);
         }
 
-        return false;
+        return grounded;
+    }
 
+    private void Flip()
+    {
+        if (isFacingRight && horizontalMovement < 0 || !isFacingRight && horizontalMovement > 0)
+        {
+            isFacingRight = !isFacingRight;
+            Vector3 ls = transform.localScale;
+            ls.x *= -1f;
+            transform.localScale = ls;
+        }
     }
 
     private void OnDrawGizmosSelected()
