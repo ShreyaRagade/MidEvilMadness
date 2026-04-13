@@ -6,11 +6,12 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 
-/* Script that holds all the talking logic for NPCs
- * like Choices, One-letter-at-atime, etc. 
+/* NPC Script - To be placed on NPCs
+ * Description: Script that holds all the talking logic for NPCs, like One-letter-at-a time, etc. 
+ * April 10th SHREYA (sr3745):
+ * April 9th SHREYA (sr3745):
  */
 
-//If you call dialogueUI.ClearChoices() elsewhere, set choicesActive = false
 
 namespace DoubleTechniStyle
 {
@@ -28,18 +29,6 @@ namespace DoubleTechniStyle
 
         private bool choicesActive = false;
 
-        // public static NPC NPCInstance { get; private set; }
-
-        private enum QuestState { NotStarted, InProgress, Completed }
-
-        //try and see if you can use something like this to track when to say what?
-
-
-       
-
-        //public static NPC NPCInstance { get; private set; }
-
-        // Sub-line handling
         private string[] currentSubLines = Array.Empty<string>();
         private int subLineIndex = 0; // index of the last enqueued subline
 
@@ -49,7 +38,7 @@ namespace DoubleTechniStyle
 
         public void Awake()
         {
-           // namePanel = GetComponent<ChangeDialogueBox>(); //just one - fix
+           
         }
 
         private void Start()
@@ -62,24 +51,11 @@ namespace DoubleTechniStyle
                 Debug.LogError("NPCDialogueController instance is not found!");
                 return;
             }
+            Debug.Log("this script is active");
 
+            if (dialogueData.NPCPortrait == null) Debug.Log("Portrait null");
            
         }
-
-
-        //private void Start()
-        //{
-        //    dialogueUI = NPCDialogueController.Instance;
-        //    tracker = Instance.dayState;
-
-
-
-        //    //HERE: fix this
-
-        //    Debug.Log("FOUND PANEL: " + namePanel, this);
-
-        //    dialogueUI.ClearChoices();
-        //}
         public bool CanInteract()
         {
             return !isDialogueActive;
@@ -87,12 +63,13 @@ namespace DoubleTechniStyle
 
         void Update()
         {
-            if (isDialogueActive && !choicesActive && Input.GetKeyDown(KeyCode.X))
-                RevealAllVisibleLines();
+            //if (isDialogueActive && !choicesActive && Input.GetKeyDown(KeyCode.X))
+            //    RevealAllVisibleLines();
         }
 
         public void Interact()
         {
+            Debug.Log("Interacting!");
             if (dialogueData == null) //|| (PauseController.IsGamePaused && !isDialogueActive)) /* ADD THIS PAUSE CONTROLLER!! */
                 return;
 
@@ -101,20 +78,20 @@ namespace DoubleTechniStyle
         }
         public void StartDialogue()
         {
-           
+            Debug.Log("Starting Dialogue");
            
             isDialogueActive = true;
 
-
+            if (dialogueData.NPCPortrait == null) Debug.Log("Npc portrait null");
             //1: dialogueUI.SetNPCInfo: 
             dialogueUI.SetNPCInfo(dialogueData.NPCName, dialogueData.NPCPortrait); //Fix this if necessary
+            Debug.Log(dialogueData.NPCPortrait.name);
+            
 
             //Should show all 2 Panels here
             dialogueUI.ShowDialogueUI(true);
 
-            //This is the changing-size Name Panel
-            // namePanel.ShowDialoguePanel(true); --> Changed this 12/11/25
-
+          
            // PauseController.SetPause(true); /*PAUSE CONTROLLER*/
             
             PrepareCurrentSubLines();
@@ -123,8 +100,6 @@ namespace DoubleTechniStyle
 
             TryEnqueueAndTypeNextSubLine();
         }
-
-       
         // playerPressed indicates this NextLine call came from a user button press
         void NextLine(bool playerPressed = false)
         {
@@ -140,19 +115,12 @@ namespace DoubleTechniStyle
                 return;
             }
 
-            //clear choices
-            
-
-
-           
             if (dialogueData.endDialogueLines.Length > dialogueIndex && dialogueData.endDialogueLines[dialogueIndex])
             {
 
                 EndDialogue();
                 return;
             }
-
-            
 
             bool hasMoreSublines = subLineIndex + 1 < currentSubLines.Length;
             bool bufferHasSpace = visibleLines.Count < maxVisible;

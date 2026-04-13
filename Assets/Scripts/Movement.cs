@@ -44,7 +44,7 @@ public class Movement : MonoBehaviour
         Gravity();
 
         
-        Debug.Log(grounded);
+       // Debug.Log(grounded);
 
         animator.SetFloat("xVel", Mathf.Abs(rb.linearVelocity.x));
        

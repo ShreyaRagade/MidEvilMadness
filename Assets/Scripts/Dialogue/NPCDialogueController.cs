@@ -5,8 +5,12 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
 
-/* Script that holds the generic dialogue UI and 
- shows and destroys it*/
+/* NPC Dialogue Controller Script
+ * Description: Script that holds the generic dialogue UI and shows and hides it
+ * April 10th SHREYA (sr3745): Adjusted Portrait Panel and Portrait Image, so that the NPC's Portrait Image shows correctly when interacting with NPC. There were problems with the Sprite Renderer vs. Image
+ * But they have now been fixed. 
+
+ */
 
 public class NPCDialogueController : MonoBehaviour
 {
@@ -22,6 +26,8 @@ public class NPCDialogueController : MonoBehaviour
     public bool isChoiceOpen = true;
 
     public Image portraitImage;
+
+   // public Sprite portraitImage;
     //UNCHECK THE ABOVE ONCE YOU GET YOUR PORTRAIT IMAGES (this is the placeholder for the default or whatever)
 
     //ADD YOUR 'OPTIONS' UI HERE
@@ -37,7 +43,7 @@ public class NPCDialogueController : MonoBehaviour
     {
         dialoguePanel.SetActive(show);
         namePanel.SetActive(show);
-
+        portraitPanel.SetActive(show);
 
 
     }
@@ -53,16 +59,14 @@ public class NPCDialogueController : MonoBehaviour
     {
         nameText.text = NPCName;
         portraitImage.sprite = NPCPortrait;
+
+        // portraitPanel.image. = NPCPortrait;
     }
 
     public void SetDialogueText(string text)
     {
-
         dialogueText.text = text;
 
     }
-
-    //I think you should add the input action here. Handle the actual logic elsewhere
-    //Put input action on empty object that holds the text, or .. ? how to navigate from option to option?
    
 }

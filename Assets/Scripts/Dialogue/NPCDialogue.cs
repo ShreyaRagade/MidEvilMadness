@@ -3,8 +3,10 @@ using TMPro;
 using System.ComponentModel;
 using UnityEngine.UI;
 
-/* Script that creates the ScriptableObject to hold all Talk 
- * Information for NPCS */
+/* NPCDialogue Script - Scriptable Object that holds dialogue Information 
+* Description: This script is a ScriptableObject, meaning that you can create data objects with it. Once an NPCDialogue object is created, it should be placed inside the NPC script in order for the dialogue to trigger.  
+* (When script was created)
+*/
 
 [CreateAssetMenu(fileName = "NewNPCDialogue", menuName = "NPC Dialogue")]
 public class NPCDialogue : ScriptableObject
