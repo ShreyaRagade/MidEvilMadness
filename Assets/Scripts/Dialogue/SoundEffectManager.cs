@@ -1,6 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/* SoundEffectManager - Place in GameController to manage SFX 
+* Description: This script is meant to handle all Sound Effects, handling things such as volume, managing the Audio Sources, randomization, etc.  
+* (When script was created)
+* APRIL 9th SHREYA (sr3745):
+*/
 public class SoundEffectManager : MonoBehaviour
 {
     private static SoundEffectManager Instance;
@@ -11,7 +16,7 @@ public class SoundEffectManager : MonoBehaviour
 
     private static SoundEffectLibrary soundEffectLibrary;
 
-    [SerializeField] private Slider sfxSlider;
+   // [SerializeField] private Slider sfxSlider;
 
     private void Awake()
     {
@@ -25,20 +30,12 @@ public class SoundEffectManager : MonoBehaviour
             voiceAudioSource = audioSources[2];
 
             soundEffectLibrary = GetComponent<SoundEffectLibrary>();
-
-
-            //may need to put this back
-            //DontDestroyOnLoad(gameObject);
-
         }
 
         else
         {
 
             Destroy(gameObject);
-
-
-
         }
     }
 
@@ -59,7 +56,6 @@ public class SoundEffectManager : MonoBehaviour
                 audioSource.PlayOneShot(audioClip);
             }
 
-
         }
 
     }
@@ -77,15 +73,16 @@ public class SoundEffectManager : MonoBehaviour
         voiceAudioSource.volume = volume;
     }
 
+    //4/10 - Additional Functions that can be used to manage volume. Add back in once you create the menu. 
     public void OnValueChanged()
     {
 
-        SetVolume(sfxSlider.value);
+     //   SetVolume(sfxSlider.value);
 
     }
 
     void Start()
     {
-        sfxSlider.onValueChanged.AddListener(delegate { OnValueChanged(); });
+     //   sfxSlider.onValueChanged.AddListener(delegate { OnValueChanged(); });
     }
 }
