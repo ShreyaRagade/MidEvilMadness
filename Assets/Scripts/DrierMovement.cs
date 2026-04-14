@@ -39,7 +39,7 @@ public class DrierMovement : MonoBehaviour
         // Check if the object that entered has a specific tag
         if (other.gameObject.CompareTag("Floor"))// (enemy.CompareTag("floor"))
         {
-            //Debug.Log("Enemy Movement ");
+            Debug.Log("Drier Movement ");
             foreach (Transform child in transform.parent)
             {
                 if (child.transform.localPosition == positionLeft)

@@ -10,8 +10,15 @@ public class EnemyDelete : MonoBehaviour
             Rigidbody2D Rb = other.gameObject.GetComponent<Rigidbody2D>();
             if(Rb.linearVelocity.y < 0) //only deletes enemy if the player is moving downwards
             {
-                //Debug.Log("Enemy Dies");
-                Destroy(transform.parent.gameObject);
+                if(gameObject.CompareTag("DrierEnemy")){
+                    Destroy(transform.parent.gameObject);
+                    //spawn martyrdom                     
+                    Debug.Log("ok Awesome");
+                }
+                else if(gameObject.CompareTag("Enemy")){
+                    //Debug.Log("Enemy Dies");
+                    Destroy(transform.parent.gameObject);
+                }
             }
         }
     }
