@@ -1268,10 +1268,6 @@ GameObject:
   - component: {fileID: 749169122}
   - component: {fileID: 749169124}
   - component: {fileID: 749169125}
-  - component: {fileID: 749169124}
-  - component: {fileID: 749169125}
-  - component: {fileID: 749169124}
-  - component: {fileID: 749169125}
   m_Layer: 0
   m_Name: lava_maybe_0
   m_TagString: Untagged
@@ -2792,6 +2788,7 @@ GameObject:
   - component: {fileID: 1279198277}
   - component: {fileID: 1279198276}
   - component: {fileID: 1279198275}
+  - component: {fileID: 1279198279}
   m_Layer: 0
   m_Name: shop-removebg-preview (1)
   m_TagString: Untagged
@@ -2933,6 +2930,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1279198279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279198274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6136c0fa77b7770489684fad00e20575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoubleTechniStyle.NPC
+  dialogueData: {fileID: 11400000, guid: 442b604104197974c8e9d25b0e9308ea, type: 2}
+  internalIsDialogueComplete: 0
+  dialogueIndex: 0
 --- !u!1 &1299765747
 GameObject:
   m_ObjectHideFlags: 0
@@ -7227,3 +7239,5 @@ SceneRoots:
   - {fileID: 272601509}
   - {fileID: 749169123}
   - {fileID: 1767926196}
+  - {fileID: 196495685}
+  - {fileID: 1279198278}
