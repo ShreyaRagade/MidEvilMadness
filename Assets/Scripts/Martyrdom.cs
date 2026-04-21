@@ -14,7 +14,7 @@ public class Martyrdom : MonoBehaviour
     {
         parentRb = GetComponent<Rigidbody2D>();   
         parentRb.linearVelocity = new Vector2(0, upVelocity);
-
+        
 
     }
 
@@ -24,6 +24,7 @@ public class Martyrdom : MonoBehaviour
         
     }
     void OnTriggerEnter2D(Collider2D other){
+        
         //KABOOM
         Debug.Log("BOOM?");
         Destroy(parentRb);
