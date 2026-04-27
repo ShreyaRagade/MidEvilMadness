@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class EnemyDelete : MonoBehaviour 
 {
+    public GameObject targetObject;
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -12,7 +14,12 @@ public class EnemyDelete : MonoBehaviour
             {
                 if(gameObject.CompareTag("DrierEnemy")){
                     Destroy(transform.parent.gameObject);
-                    //spawn martyrdom                     
+                    //spawn martyrdom
+                    Vector2 spawnPosition = transform.position;
+                    spawnPosition.y += 5f;
+                   
+                    GameObject clone = Instantiate(targetObject, spawnPosition, transform.rotation);
+                    
                     Debug.Log("ok Awesome");
                 }
                 else if(gameObject.CompareTag("Enemy")){
