@@ -16,9 +16,9 @@ public class EnemyDelete : MonoBehaviour
                     Destroy(transform.parent.gameObject);
                     //spawn martyrdom
                     Vector2 spawnPosition = transform.position;
-                    spawnPosition.y += 5f;
+                    //spawnPosition.y += 5f;
                    
-                    GameObject clone = Instantiate(targetObject, spawnPosition, transform.rotation);
+                    GameObject clone = Instantiate(targetObject, spawnPosition + Vector2.up * 5f, transform.rotation);
                     
                     Debug.Log("ok Awesome");
                 }

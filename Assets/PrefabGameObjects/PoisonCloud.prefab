@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2052840752495283260}
   - component: {fileID: 3528847205852250708}
   - component: {fileID: 4522220528623947988}
+  - component: {fileID: -5074849245081853613}
   m_Layer: 0
   m_Name: PoisonCloud
   m_TagString: Untagged
@@ -84,7 +85,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.15851186, g: 0.6830188, b: 0.20932181, a: 1}
+  m_Color: {r: 0.68235296, g: 0.15793078, b: 0.15686274, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -154,3 +155,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-5074849245081853613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146913073250266150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 801ca78e4aebc3749b663f82948b057d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PoisonCloud
