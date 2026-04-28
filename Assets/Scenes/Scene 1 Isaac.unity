@@ -675,7 +675,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &508584040
 SpriteRenderer:
@@ -3876,7 +3876,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &1500463503
 SpriteRenderer:
@@ -7207,4 +7207,5 @@ SceneRoots:
   - {fileID: 1697195507}
   - {fileID: 272601509}
   - {fileID: 749169123}
-  - {fileID: 1767926196}
+  - {fileID: 196495685}
+  - {fileID: 1279198278}

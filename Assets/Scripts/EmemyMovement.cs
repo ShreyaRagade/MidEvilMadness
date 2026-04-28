@@ -27,10 +27,10 @@ public class EmemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //rb.linearVelocity = new Vector2(xDir * movementSpeed, rb.linearVelocity.y);
-        parentRb.linearVelocity = new Vector2(xDir * movementSpeed, parentRb.linearVelocity.y);
+        //rb.linearVelocity = new Vector2(0, xDir * movementSpeed);
+        //parentRb.linearVelocity =  new Vector2(0, xDir * movementSpeed);
     
-        //parentRb.linearVelocity = new Vector2(xDir * movementSpeed, parentRb.linearVelocity.y);
+        parentRb.linearVelocity = new Vector2(xDir * movementSpeed, parentRb.linearVelocity.y);
 
         //movementDirection = new Vector2(movementSpeed*xDir, 0f); 
     }
