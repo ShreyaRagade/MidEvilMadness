@@ -19,6 +19,15 @@ public class Respawn : MonoBehaviour
          {
              Player.transform.position = respawnPoint.position;
              Health.HealthInstance.healthAmount = 100;
+             if(Collectables.coins >= 2)
+              {
+                Collectables.coins -= 2;
+              }
+                else
+                 {
+                  Collectables.coins = 0;
+                 }
+              }
          }
     }
-}
+
