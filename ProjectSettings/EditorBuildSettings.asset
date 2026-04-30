@@ -14,6 +14,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 2 Omar.unity
     guid: 95f727344355b804b86ec92de1ecb6e3
+  - enabled: 1
+    path: Assets/Scenes/Level 3 [someones name here].unity
+    guid: 9c3db35f370dcae4782e57388ae94ea7
+  - enabled: 1
+    path: Assets/Scenes/Level 4 [someone name here].unity
+    guid: ea47e5c7dcd376041bfbe9b7f1ef6b70
+  - enabled: 1
+    path: Assets/Scenes/Boss.unity
+    guid: 07455078442e44a4a93768fb2777add4
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 28ecff33cb8553948bf3e44613a5a0ad, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

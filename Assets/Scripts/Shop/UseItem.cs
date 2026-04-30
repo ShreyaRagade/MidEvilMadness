@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using DoubleTechniStyle;
+
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -46,7 +46,7 @@ public class UseItem : ScriptableObject
 
         Debug.Log("using " + name);
 
-        Health.HealthInstance.healthAmount = HP;
+        Health.HealthInstance.healthAmount += HP;
        
 
     }

@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using DoubleTechniStyle;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -12,9 +11,6 @@ using UnityEngine;
  * April 9th SHREYA (sr3745):
  */
 
-
-namespace DoubleTechniStyle
-{
 
     public class NPC : MonoBehaviour, IInteractable
     {
@@ -310,15 +306,7 @@ namespace DoubleTechniStyle
 
             internalIsDialogueComplete = true;
 
-
-
-
-
-
         }
 
-
-
-      
     }
-}
+

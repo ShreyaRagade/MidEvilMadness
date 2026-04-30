@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     public Rigidbody2D rb;
     Animator animator;
     bool isFacingRight = true;
+    public bool isMoving = false;
 
     [Header("Movement")]
     public float moveSpeed = 5f;
@@ -40,6 +41,11 @@ public class Movement : MonoBehaviour
         rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
         Flip();
         bool grounded = isGrounded();
+
+        if(horizontalMovement == 0)
+        {
+            isMoving = false;
+        }
         
         Gravity();
 
@@ -69,6 +75,7 @@ public class Movement : MonoBehaviour
     {
 
         horizontalMovement = context.ReadValue<Vector2>().x;
+        isMoving = true;
         
     }
 
