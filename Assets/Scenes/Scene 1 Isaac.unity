@@ -341,7 +341,7 @@ Transform:
   m_GameObject: {fileID: 196495683}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.36, y: -6.78, z: 0}
+  m_LocalPosition: {x: -1.46, y: -4.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2622,6 +2622,52 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1235902842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1235902844}
+  - component: {fileID: 1235902843}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1235902843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235902842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b889743a7360d244b58cbce2d401125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Respawn
+  respawnPoint: {fileID: 1235902844}
+  Player: {fileID: 1500463498}
+--- !u!4 &1235902844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235902842}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -16.5, y: -7.24, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1237074591
 GameObject:
   m_ObjectHideFlags: 0
@@ -3909,6 +3955,7 @@ GameObject:
   - component: {fileID: 1500463506}
   - component: {fileID: 1500463507}
   - component: {fileID: 1500463508}
+  - component: {fileID: 1500463509}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3929,6 +3976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
   rb: {fileID: 1500463502}
+  isMoving: 0
   moveSpeed: 10
   jumpPower: 20
   maxJumps: 1
@@ -4280,6 +4328,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1500463509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500463498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b889743a7360d244b58cbce2d401125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Respawn
+  respawnPoint: {fileID: 0}
+  Player: {fileID: 1500463498}
 --- !u!1 &1601123130
 GameObject:
   m_ObjectHideFlags: 0
@@ -4317,7 +4379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 36.183, y: 361}
+  m_AnchoredPosition: {x: 36.183105, y: 361}
   m_SizeDelta: {x: -1137.5, y: -963.9875}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1601123132
@@ -4407,7 +4469,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1619134225
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4425,7 +4487,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.666626, y: -79}
+  m_AnchoredPosition: {x: -3.666504, y: -79}
   m_SizeDelta: {x: -203.6744, y: -374.9037}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1619134226
@@ -7731,3 +7793,4 @@ SceneRoots:
   - {fileID: 749169123}
   - {fileID: 196495685}
   - {fileID: 1279198278}
+  - {fileID: 1235902844}
