@@ -82,7 +82,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.68235296, g: 0.15793078, b: 0.15686274, a: 1}
@@ -167,3 +167,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 801ca78e4aebc3749b663f82948b057d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PoisonCloud
+  PoisonCloudLifeTime: 5
