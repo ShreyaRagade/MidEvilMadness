@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - EnemyAttack
   - DrierEnemy
+  - Horizontal
+  - Vertical
   layers:
   - Default
   - TransparentFX
