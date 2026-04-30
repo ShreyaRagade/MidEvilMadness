@@ -1733,6 +1733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
   rb: {fileID: 1170743529}
+  isMoving: 0
   moveSpeed: 10
   jumpPower: 20
   maxJumps: 1
@@ -2000,7 +2001,7 @@ GameObject:
   - component: {fileID: 1242661495}
   m_Layer: 0
   m_Name: Respawn Point
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
