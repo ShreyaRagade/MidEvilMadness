@@ -507,6 +507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
   rb: {fileID: 22823895}
+  isMoving: 0
   moveSpeed: 10
   jumpPower: 20
   maxJumps: 1
@@ -676,7 +677,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c8266af65b71ff147b2db2367ee5fe0a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1150,6 +1151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
   rb: {fileID: 124423494}
+  isMoving: 0
   moveSpeed: 10
   jumpPower: 20
   maxJumps: 1
@@ -7273,6 +7275,7 @@ GameObject:
   - component: {fileID: 1083093095}
   - component: {fileID: 1083093094}
   - component: {fileID: 1083093093}
+  - component: {fileID: 1083093097}
   m_Layer: 3
   m_Name: platform-removebg-preview_0 (2)
   m_TagString: Vertical
@@ -7428,6 +7431,19 @@ Transform:
   - {fileID: 314776198}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1083093097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083093092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e42c02c6e1823fd4ead12d817aac8923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformPlayerMovement
+  movement: {fileID: 22823893}
 --- !u!1 &1119507544
 GameObject:
   m_ObjectHideFlags: 0
@@ -7531,6 +7547,7 @@ GameObject:
   - component: {fileID: 1228343556}
   - component: {fileID: 1228343558}
   - component: {fileID: 1228343559}
+  - component: {fileID: 1228343560}
   m_Layer: 3
   m_Name: platform-removebg-preview_0 (1)
   m_TagString: Horizontal
@@ -7629,7 +7646,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c8266af65b71ff147b2db2367ee5fe0a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -7674,7 +7691,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.08392906}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7684,8 +7701,21 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 9.77, y: 2.38}
+  m_Size: {x: 9.77, y: 2.5478582}
   m_EdgeRadius: 0
+--- !u!114 &1228343560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228343555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e42c02c6e1823fd4ead12d817aac8923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformPlayerMovement
+  movement: {fileID: 22823893}
 --- !u!1 &1320312538
 GameObject:
   m_ObjectHideFlags: 0
@@ -8094,6 +8124,7 @@ GameObject:
   - component: {fileID: 1463749805}
   - component: {fileID: 1463749804}
   - component: {fileID: 1463749803}
+  - component: {fileID: 1463749807}
   m_Layer: 3
   m_Name: platform-removebg-preview_0 (4)
   m_TagString: Vertical
@@ -8249,6 +8280,19 @@ Transform:
   - {fileID: 1774441904}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1463749807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463749802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e42c02c6e1823fd4ead12d817aac8923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformPlayerMovement
+  movement: {fileID: 22823893}
 --- !u!1 &1516001462
 GameObject:
   m_ObjectHideFlags: 0

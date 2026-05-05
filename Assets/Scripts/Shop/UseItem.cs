@@ -16,19 +16,15 @@ public class UseItem : ScriptableObject
     public GameObject itemPrefab; //prolly get rid of this
 
     public int HP;
-    
 
     [TextArea(1, 5)]
-    public string itemDescription; //make sure you include the stats with this and the name, like Kombucha (DELL +100)
-
+    public string itemDescription; 
 
     //Shop
     public int buyPrice = 10;
 
     [Range(0, 1)]
     public float sellPriceMultiplier = 0.5f;
-
-    
     private void OnEnable()
     {
 
@@ -37,18 +33,10 @@ public class UseItem : ScriptableObject
             uniqueItemID = itemName + Guid.NewGuid().ToString();
 
         }
-
     }
-
     public virtual void Use()
-    {
-        //use the item
-
-        Debug.Log("using " + name);
-
+    { 
         Health.HealthInstance.healthAmount += HP;
-       
-
     }
 
     

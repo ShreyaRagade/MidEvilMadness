@@ -50,15 +50,13 @@ public class ShopNPC : MonoBehaviour, IInteractable
         isInitialized = true;
     }
     public bool CanInteract()
-{
-    //Can check your daytracker or whatever. for now its open at all times
-    return true;
-}
+    {
+        //Can check your daytracker or whatever. for now its open at all times
+        return true;
+    }
 
     public void Interact()
     {
-
-
         if (ShopController.ShopControllerInstance == null)
         {
 
@@ -90,45 +88,44 @@ public class ShopNPC : MonoBehaviour, IInteractable
 
 
     }
-
-
-
     public List<ShopStockItem> GetCurrentStock()
     {
         return currentShopStock;
     }
 
-    //        public void SetStock(List<ShopStockItem> stock)
-    //        {
-    //            currentShopStock = stock;
-    //        }
+    public void SetStock(List<ShopStockItem> stock)
+    {
+        currentShopStock = stock;
+    }
 
-    //        public void AddToStock(int itemID, int quantity)
-    //        {
-    //            ShopStockItem existing = currentShopStock.Find(s => s.generalItemID == itemID);
-    //            if (existing != null)
-    //            {
-    //                existing.quantity += quantity;
-    //            }
-    //            else
-    //            {
-    //                currentShopStock.Add(new ShopStockItem { generalItemID = itemID, quantity = quantity });
-    //            }
+    public void AddToStock(int itemID, int quantity)
+    {
+        ShopStockItem existing = currentShopStock.Find(s => s.generalItemID == itemID);
+        if (existing != null)
+        {
+            existing.quantity += quantity;
+        }
+        else
+        {
+            currentShopStock.Add(new ShopStockItem { generalItemID = itemID, quantity = quantity });
+        }
 
-    //        }
-
-
-    //        public bool RemoveFromShopStock(int itemID, int quantity)
-    //        {
-    //            ShopStockItem existing = currentShopStock.Find(s => s.generalItemID == itemID);
-    //            if (existing != null && existing.quantity >= quantity)
-    //            {
-    //                existing.quantity -= quantity;
-    //                return true;
-    //            }
-    //            return false;
+    }
 
 
+    public bool RemoveFromShopStock(int itemID, int quantity)
+    {
+        ShopStockItem existing = currentShopStock.Find(s => s.generalItemID == itemID);
+        if (existing != null && existing.quantity >= quantity)
+        {
+            existing.quantity -= quantity;
+            return true;
+        }
+        return false;
+
+
+
+    }
 
 }
 
