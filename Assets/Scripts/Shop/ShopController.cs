@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 public class ShopController : MonoBehaviour
 {
 
-            public static ShopController ShopControllerInstance;
+    public static ShopController ShopControllerInstance;
 
     [Header("UI")]
     public GameObject shopPanel;
@@ -113,8 +113,7 @@ public class ShopController : MonoBehaviour
         foreach (Transform child in ShopController.ShopControllerInstance.itemDescriptionPanel)
             Destroy(child.gameObject);
 
-        // UseItem item = firstSlot.item;
-        //   ShopController.ShopControllerInstance.itemDescriptionText.text = item.name;
+       
 
 
 
@@ -194,15 +193,14 @@ public class ShopController : MonoBehaviour
 
         //Debug.Log(UseInventoryController.Instance.itemsCountCache[id]);
 
-       // int price = isShop ? item.buyPrice : item.GetSellPrice();
+      //  int price = isShop ? item.buyPrice : item.GetSellPrice();
 
         ShopSlot slot = slotObj.GetComponent<ShopSlot>();
         slot.isShopSlot = isShop;
-       // slot.SetItem(itemInstance, price, item);
+      //  slot.SetItem(itemInstance, price, item);
 
-        //Add Shop Item Handler here
-       // ShopItemHandler handler = itemInstance.AddComponent<ShopItemHandler>();
         
+
     }
 
     public void AddItemToShop(int itemID, int quantity)

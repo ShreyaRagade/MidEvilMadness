@@ -46,7 +46,7 @@ using UnityEngine;
 
             currentItem = useItem;
 
-            //TMP_Text textReplace = GetComponent<TMP_Text>();
+           TMP_Text textReplace = GetComponent<TMP_Text>();
             //Debug.Log(textReplace.text);
             priceText.text = "";
             priceText.text = currentItem.name; //Careful how you name stuff because I think it is getting the name of the object itself 
