@@ -1530,7 +1530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hazard
   hazardDamage: 10
-  respawnPoint: {fileID: 1667025456}
+  respawnPoint: {fileID: 1667025454}
   Player: {fileID: 22823888}
 --- !u!60 &204631899
 PolygonCollider2D:
@@ -1753,8 +1753,8 @@ Transform:
   m_GameObject: {fileID: 314776197}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.118, y: 0.601, z: 0}
-  m_LocalScale: {x: 10.526442, y: 0.9919197, z: 0}
+  m_LocalPosition: {x: -0.1, y: 0.947, z: 0}
+  m_LocalScale: {x: 10.494862, y: 1.6842796, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1083093096}
@@ -1771,6 +1771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc7b5c4bafb80f94698685aeb6880d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovingPlatform
+  Platform: {fileID: 1083093092}
 --- !u!61 &314776200
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1950,6 +1951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c27e5bf8895099d47a8082652f9cfb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDelete
+  targetObject: {fileID: 0}
 --- !u!50 &483028348
 Rigidbody2D:
   serializedVersion: 5
@@ -6813,7 +6815,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6869,8 +6871,8 @@ Transform:
   m_GameObject: {fileID: 1051594845}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.118, y: 0.601, z: 0}
-  m_LocalScale: {x: 10.526442, y: 0.9919197, z: 0}
+  m_LocalPosition: {x: -0.125, y: 0.891, z: 0}
+  m_LocalScale: {x: 10.515915, y: 1.5721928, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1228343557}
@@ -7019,6 +7021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc7b5c4bafb80f94698685aeb6880d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovingPlatform
+  Platform: {fileID: 0}
 --- !u!1 &1061940364
 GameObject:
   m_ObjectHideFlags: 0
@@ -7275,9 +7278,8 @@ GameObject:
   - component: {fileID: 1083093095}
   - component: {fileID: 1083093094}
   - component: {fileID: 1083093093}
-  - component: {fileID: 1083093097}
   m_Layer: 3
-  m_Name: platform-removebg-preview_0 (2)
+  m_Name: platform 1
   m_TagString: Vertical
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7431,19 +7433,6 @@ Transform:
   - {fileID: 314776198}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1083093097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1083093092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e42c02c6e1823fd4ead12d817aac8923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlatformPlayerMovement
-  movement: {fileID: 22823893}
 --- !u!1 &1119507544
 GameObject:
   m_ObjectHideFlags: 0
@@ -7547,7 +7536,6 @@ GameObject:
   - component: {fileID: 1228343556}
   - component: {fileID: 1228343558}
   - component: {fileID: 1228343559}
-  - component: {fileID: 1228343560}
   m_Layer: 3
   m_Name: platform-removebg-preview_0 (1)
   m_TagString: Horizontal
@@ -7703,19 +7691,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 9.77, y: 2.5478582}
   m_EdgeRadius: 0
---- !u!114 &1228343560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1228343555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e42c02c6e1823fd4ead12d817aac8923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlatformPlayerMovement
-  movement: {fileID: 22823893}
 --- !u!1 &1320312538
 GameObject:
   m_ObjectHideFlags: 0
@@ -8292,7 +8267,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42c02c6e1823fd4ead12d817aac8923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformPlayerMovement
-  movement: {fileID: 22823893}
 --- !u!1 &1516001462
 GameObject:
   m_ObjectHideFlags: 0
@@ -8325,7 +8299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hazard
   hazardDamage: 10
-  respawnPoint: {fileID: 1667025456}
+  respawnPoint: {fileID: 1667025454}
   Player: {fileID: 22823888}
 --- !u!60 &1516001464
 PolygonCollider2D:
@@ -8852,7 +8826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hazard
   hazardDamage: 10
-  respawnPoint: {fileID: 1667025456}
+  respawnPoint: {fileID: 1667025454}
   Player: {fileID: 22823888}
 --- !u!212 &1599399115
 SpriteRenderer:
@@ -9285,7 +9259,7 @@ GameObject:
   - component: {fileID: 1667025456}
   - component: {fileID: 1667025455}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9573,8 +9547,8 @@ Transform:
   m_GameObject: {fileID: 1774441903}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.118, y: 0.601, z: 0}
-  m_LocalScale: {x: 10.526442, y: 0.9919197, z: 0}
+  m_LocalPosition: {x: -0.113, y: 0.889, z: 0}
+  m_LocalScale: {x: 10.515915, y: 1.569217, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1463749806}
@@ -9591,6 +9565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc7b5c4bafb80f94698685aeb6880d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovingPlatform
+  Platform: {fileID: 0}
 --- !u!61 &1774441906
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9834,7 +9809,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10533,7 +10508,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
