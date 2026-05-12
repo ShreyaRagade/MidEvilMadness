@@ -10,6 +10,7 @@ TagManager:
   - DrierEnemy
   - Horizontal
   - Vertical
+  - BossCollider
   layers:
   - Default
   - TransparentFX
