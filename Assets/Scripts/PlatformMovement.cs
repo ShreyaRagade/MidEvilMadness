@@ -1,90 +1,81 @@
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
+public class MovingPlatform : MonoBehaviour 
 {
-    private float movementSpeed = 4f;
+    [SerializeField] private float movementSpeed = 4f;
     private bool vert = false;
     private bool horz = false;
-
-    private Vector2 movementDirection;
-
-    //private Rigidbody2D rb; 
-    private Rigidbody2D parentRb;
-    public GameObject Platform;
-    private bool playerOnPlatform = false;
-    private GameObject child;
-    
-
-
     private int xDir = -1; // -1 = left, 1 = right
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private Rigidbody2D parentRb;
+    private Rigidbody2D playerRb;
+    private bool playerOnPlatform = false;
+
     void Start()
     {
-       //rb = transform.GetComponent<Rigidbody2D>();
         parentRb = transform.parent.GetComponent<Rigidbody2D>();
-        
-       
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (vert)
+        // Keep non-physics trigger flags or direction switching logic here if needed
+    }
+
+    void FixedUpdate()
+    {
+        // 1. Move the platform safely using physics velocities
+        if (vert) 
         {
             parentRb.linearVelocity = new Vector2(parentRb.linearVelocity.x, xDir * movementSpeed);
-        }
-        else if (horz)
+        } 
+        else if (horz) 
         {
-            parentRb.linearVelocity =  new Vector2(xDir * movementSpeed, parentRb.linearVelocity.y);
+            parentRb.linearVelocity = new Vector2(xDir * movementSpeed, parentRb.linearVelocity.y);
         }
-        if(playerOnPlatform)
-        {
-            
-            // Move the player with the platform
-            // Assuming the player has a Rigidbody2D component
-            // You can adjust this to fit your specific player movement logic
-            // For example, you might want to add the platform's velocity to the player's velocity
-            // or set the player's position relative to the platform's position
-            // Example: Adding platform's velocity to player's velocity
-            Rigidbody2D playerRb = child.GetComponent<Rigidbody2D>();
-            if (playerRb != null)
-            {
-                if (horz)
-                {
-                    playerRb.linearVelocity += parentRb.linearVelocity;
-                }
-            }
 
+        // 2. Safely apply platform velocity adjustments to the player while riding
+        if (playerOnPlatform && playerRb != null && horz)
+        {
+            // Set horizontal velocity directly to match the platform, maintaining the player's original vertical gravity/fall speed
+            playerRb.linearVelocity += parentRb.linearVelocity;
         }
     }
-    void OnTriggerEnter2D(Collider2D other)
+
+    void OnTriggerEnter2D(Collider2D other) 
     {
-        // Check if the object that entered has a specific tag
-        if (other.gameObject.CompareTag("Floor"))// (enemy.CompareTag("floor"))
-        {            
+        if (other.gameObject.CompareTag("Floor"))
+        {
             xDir *= -1;
         }
-
-        if (other.gameObject.CompareTag("Vertical")){
+        if (other.gameObject.CompareTag("Vertical"))
+        {
             vert = true;
         }
-        if (other.gameObject.CompareTag("Horizontal")){
+        if (other.gameObject.CompareTag("Horizontal"))
+        {
             horz = true;
         }
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player")) 
         {
-            other.transform.SetParent(this.transform);
-            playerOnPlatform = true;
-            child = transform.GetChild(0).gameObject;
+            playerRb = other.GetComponent<Rigidbody2D>();
+            if (playerRb != null)
+            {
+                playerOnPlatform = true;
+                
+                // Optional: Remove SetParent if your player has its own Rigidbody movement.
+                // Leaving it enabled can fight against direct Rigidbody velocity changes.
+                other.transform.SetParent(this.transform); 
+            }
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other) 
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player")) 
         {
             other.transform.SetParent(null);
             playerOnPlatform = false;
+            playerRb = null;
         }
     }
 }

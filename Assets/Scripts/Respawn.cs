@@ -27,6 +27,7 @@ public class Respawn : MonoBehaviour
                  {
                   Collectables.coins = 0;
                  }
+                Debug.Log("Player respawned! Health reset to 100. Coins: " + Collectables.coins);
               }
          }
     }
