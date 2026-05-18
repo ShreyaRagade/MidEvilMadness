@@ -23,7 +23,7 @@ public class EnemyDelete : MonoBehaviour
                     Debug.Log("ok Awesome");
                 }
                 else if(gameObject.CompareTag("Enemy")){
-                    //Debug.Log("Enemy Dies");
+                    Debug.Log("Enemy Dies");
                     Destroy(transform.parent.gameObject);
                 }
             }

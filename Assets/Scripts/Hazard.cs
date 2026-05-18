@@ -27,6 +27,7 @@ public class Hazard : MonoBehaviour
         {
             Health.HealthInstance.healthAmount -= hazardDamage;
             Player.transform.position = respawnPoint.transform.position;
+            Debug.Log("Player hit hazard! Health: " + Health.HealthInstance.healthAmount);
         }
     }
 }
