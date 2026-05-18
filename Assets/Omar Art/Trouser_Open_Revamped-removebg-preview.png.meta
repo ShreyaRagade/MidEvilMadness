@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4198a572f2c3b614c8a413c276875055
+guid: 245a2da8da252d14b8bd792d88028058
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7598424692441442416
-    second: trouser_closed-removebg-preview_0
+      213: -5395463974971740388
+    second: Trouser_Open_Revamped-removebg-preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: trouser_closed-removebg-preview_0
+      name: Trouser_Open_Revamped-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 4
-        width: 54
-        height: 53
+        x: 33
+        y: 0
+        width: 484
+        height: 444
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 097987a1009fc8690800000000000000
-      internalID: -7598424692441442416
+      spriteID: c1f6465e9167f15b0800000000000000
+      internalID: -5395463974971740388
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      trouser_closed-removebg-preview_0: -7598424692441442416
+      Trouser_Open_Revamped-removebg-preview_0: -5395463974971740388
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

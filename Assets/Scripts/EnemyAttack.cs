@@ -20,8 +20,9 @@ public class EnemyAttack : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other){
         //Debug.Log(other.tag);
-        if((other.CompareTag("Enemy") || other.CompareTag("EnemyAttack")) && other.gameObject.name != "Enemy Delete Collider"  ){
+        if((other.CompareTag("Enemy") || other.CompareTag("EnemyAttack")) && other.gameObject.name != "Enemy Delete Collider" && other.gameObject.name != "Enemy1" ){
             rb = GetComponent<Rigidbody2D>();      
+            Debug.Log(other.gameObject.name);
 
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, upVelocity);
             health.healthAmount -= 10;
