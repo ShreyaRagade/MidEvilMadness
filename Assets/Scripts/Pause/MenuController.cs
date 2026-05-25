@@ -5,10 +5,8 @@ using UnityEngine.InputSystem;
 
 public class MenuController : MonoBehaviour
 {
-
-
     public GameObject menuCanvas;
-    //public TabController controller;
+    
 
     [SerializeField] private GameObject arrow;
 
