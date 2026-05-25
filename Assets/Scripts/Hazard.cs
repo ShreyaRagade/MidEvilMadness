@@ -7,6 +7,7 @@ public class Hazard : MonoBehaviour
     public int hazardDamage = 10;
     public GameObject respawnPoint;
     public GameObject Player;
+    public Boss
 
     void Start()
     {

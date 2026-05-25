@@ -11,6 +11,8 @@ TagManager:
   - Horizontal
   - Vertical
   - BossCollider
+  - LeftCollider
+  - RightCollider
   layers:
   - Default
   - TransparentFX
