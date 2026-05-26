@@ -1,9 +1,13 @@
 using UnityEngine;
 
+
 public class BossMovement : MonoBehaviour
 {
+    public EmemyMovement enemymovement; 
     private int bossState = 1;
     private float movementSpeed = 2f;
+    public GameObject Player;
+
 
     private Vector2 movementDirection;
     public Vector2 stopAtPosition = new Vector2(0, -10.95372f);
@@ -11,15 +15,30 @@ public class BossMovement : MonoBehaviour
     private bool stage2 = false;
     private bool stage3 = false;
     private int jumpNum = 0;
+    private bool bossJumping = false;
+
 
     private Rigidbody2D parentRb;
+
+
+    public GameObject EnemyBOSS;
+    public GameObject DrierEnemyBOSS;
+
+
+
 
     private int xDir = -1; // -1 = left, 1 = right
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         parentRb = transform.parent.GetComponent<Rigidbody2D>();
+        Player = GameObject.FindWithTag("Player");
+        enemymovement = GameObject.FindWithTag("Enemy").GetComponent<EmemyMovement>();
+        EnemyBOSS = GameObject.FindWithTag("Enemy").transform.parent.gameObject;
+        DrierEnemyBOSS = GameObject.FindWithTag("DrierEnemy").transform.parent.gameObject;
+        
     }
+
 
     // Update is called once per frame
     void Update()
@@ -32,11 +51,13 @@ public class BossMovement : MonoBehaviour
         {
             parentRb.linearVelocity = new Vector2(0,0);
 
+
             float distance = Vector2.Distance(transform.position, stopAtPosition);
+
 
             if (distance > 0.1f) {
                 transform.parent.position = Vector2.MoveTowards(transform.position, stopAtPosition, 2f * Time.deltaTime);
-            } 
+            }
             else if(stage2 == false){
                 transform.parent.position = stopAtPosition;
                 stage2 = true;
@@ -48,12 +69,16 @@ public class BossMovement : MonoBehaviour
                 InvokeRepeating("bossJump2", 3.0f, 10.0f);
                 jumpNum = 0;
 
+
             }
+
 
         }
     }
 
-    void bossJump(){
+
+    void bossJump()
+    {
         if(jumpNum == 0)
         {
             parentRb.linearVelocity = new Vector2(Random.Range(-10, -5), Random.Range(10, 15));
@@ -78,7 +103,9 @@ public class BossMovement : MonoBehaviour
         }
     }
 
-    void bossJump2(){
+
+    void bossJump2()
+    {
         jumpNum += 1;
         if(jumpNum % 3 == 0)
         {        
@@ -95,15 +122,57 @@ public class BossMovement : MonoBehaviour
             //AirRaid
         }
     }
+
+
+    void spawnRandEnemy()
+    {
+        float random = UnityEngine.Random.value;
+        random = 0;
+
+        Vector3 leftV = new Vector3(10, -4, 0);
+
+        int targetDir = 1; //right
+        if (Player != null && Player.transform.position.x < transform.parent.position.x)
+        {
+          leftV.x *= -1;
+          targetDir = -1; //left
+        }
+        GameObject clone;
+        if(random > 0.5)
+        {
+            clone = Instantiate(EnemyBOSS, transform.parent.position + leftV , transform.rotation);
+        }
+        else
+        {
+           clone = Instantiate(DrierEnemyBOSS, transform.parent.position + leftV, transform.rotation);
+        }
+        Rigidbody2D rb = clone.GetComponent<Rigidbody2D>();
+
+        if (rb != null)
+        {
+            rb.gravityScale = 0;
+        }
+        EmemyMovement cloneMovement = clone.GetComponentInChildren<EmemyMovement>();
+
+        if (cloneMovement != null)
+        {
+            cloneMovement.xDir = targetDir;
+        }
+        clone.transform.position += new Vector3(0, 10, 0);
+
+    }
+
+
     void OnTriggerEnter2D(Collider2D other)
     {
         // Check if the object that entered has a specific tag
-        
+       
         if (other.gameObject.CompareTag("Floor") || other.gameObject.CompareTag("BossCollider"))
-        {   
+        {  
             if(bossState == 1)
             {  
                 xDir *= -1;
+                spawnRandEnemy();
             }
         }
         if (other.gameObject.CompareTag("Player"))
@@ -111,6 +180,10 @@ public class BossMovement : MonoBehaviour
             bossState = 2;
         }
     }
+
+
 }
 //-10.95372
     //transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+
+
