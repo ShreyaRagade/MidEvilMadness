@@ -4,18 +4,30 @@ public class Collectables : MonoBehaviour
 {
     public static int coins = 0;
     public AudioPlayer audioPlayer;
-    //public Bossmovement bossMovement;
+    public BossMovement bossMovement;
+    public float tidePodDriftSpeed = 0.2f;
+    private bool tidePodCollected = false;
+    private Vector2 tidePodTarget;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        bossMovement = GameObject.FindWithTag("Boss").GetComponent<BossMovement>();
     }
     
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (tidePodCollected)
+        {
+            tidePodTarget = bossMovement.transform.position;
+            transform.position = Vector2.MoveTowards(transform.position, tidePodTarget, tidePodDriftSpeed * Time.deltaTime);
+            if(transform.position == bossMovement.transform.position)
+            {
+                Debug.Log("TidePod reached the boss! Boss is now vulnerable!");
+                Destroy(gameObject);
+            }
+        }
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -28,18 +40,15 @@ public class Collectables : MonoBehaviour
                 Debug.Log("Coins: " + coins);
                 Destroy(gameObject);
             }
-            /*else if(this.gameObject.CompareTag("TidePod"))
+            else if(this.gameObject.CompareTag("TidePod"))
             {
-                //add state change logic here [1->2, 2->3]
-                if(bossMovement.bossState == 1)
+                if (!tidePodCollected)
                 {
-                    bossMovement.bossState = 2;
+                    tidePodCollected = true;
                 }
-                else if(bossMovement.bossState == 2)
-                {
-                    bossMovement.bossState = 3;
-                }
-            }*/
+
+                Debug.Log("TidePod collected, boss is now vulnerable!");
+            }
         }
     }
 }

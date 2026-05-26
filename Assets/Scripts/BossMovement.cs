@@ -6,7 +6,7 @@ public class BossMovement : MonoBehaviour
     private float movementSpeed = 2f;
 
     private Vector2 movementDirection;
-    private Vector2 stopAtPosition = new Vector2(0, -10.95372f);
+    public Vector2 stopAtPosition = new Vector2(0, -10.95372f);
     private bool stage1 = true;
     private bool stage2 = false;
     private bool stage3 = false;
