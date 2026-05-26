@@ -4,7 +4,7 @@ public class Collectables : MonoBehaviour
 {
     public static int coins = 0;
     public AudioPlayer audioPlayer;
-    public Bossmovement bossMovement;
+    //public Bossmovement bossMovement;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,7 +28,7 @@ public class Collectables : MonoBehaviour
                 Debug.Log("Coins: " + coins);
                 Destroy(gameObject);
             }
-             else if(this.gameObject.CompareTag("TidePod"))
+            /*else if(this.gameObject.CompareTag("TidePod"))
             {
                 //add state change logic here [1->2, 2->3]
                 if(bossMovement.bossState == 1)
@@ -39,7 +39,7 @@ public class Collectables : MonoBehaviour
                 {
                     bossMovement.bossState = 3;
                 }
-            }
+            }*/
         }
     }
 }
