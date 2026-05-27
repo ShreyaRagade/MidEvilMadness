@@ -16,6 +16,9 @@ TagManager:
   - Coin
   - TidePod
   - Boss
+  - HitTidePod
+  - missile
+  - LeftSpikeWave
   layers:
   - Default
   - TransparentFX
