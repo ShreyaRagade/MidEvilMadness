@@ -20,6 +20,7 @@ public class Collectables : MonoBehaviour
     {
         if (tidePodCollected)
         {
+            gameObject.tag = "HitTidePod";
             tidePodTarget = bossMovement.transform.position;
             transform.position = Vector2.MoveTowards(transform.position, tidePodTarget, tidePodDriftSpeed * Time.deltaTime);
             if(transform.position == bossMovement.transform.position)
