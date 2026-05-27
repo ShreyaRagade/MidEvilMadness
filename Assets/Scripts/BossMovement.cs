@@ -92,11 +92,13 @@ public class BossMovement : MonoBehaviour
             CancelInvoke("bossJump");
             bossState = 3;
         }
+        bossJumping = true;
     }
 
 
     void bossJump2()
     {
+        
         jumpNum += 1;
         if(jumpNum % 3 == 0)
         {        
@@ -112,6 +114,7 @@ public class BossMovement : MonoBehaviour
         {
             //AirRaid
         }
+        bossJumping = true;
     }
 
 
@@ -167,7 +170,7 @@ public class BossMovement : MonoBehaviour
        
         if (other.gameObject.CompareTag("Floor") || other.gameObject.CompareTag("BossCollider"))
         {  
-            if(bossState == 1)
+            if(bossState == 1 && other.gameObject.CompareTag("BossCollider"))
             {  
                 xDDir *= -1;
                 spawnRandEnemy();
@@ -176,6 +179,21 @@ public class BossMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             bossState = 2;
+        }
+        if(other.gameObject.CompareTag("Floor") && bossJumping == true)
+        {
+            Debug.Log("SPAWN");
+            if(bossState == 2)
+            {
+                spawnRandEnemy();
+            }
+            else if(bossState == 3)
+            {
+                spawnRandEnemy();
+                //spike wave
+            }
+            bossJumping = false;
+
         }
     }
 
