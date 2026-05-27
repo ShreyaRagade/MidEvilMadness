@@ -14,13 +14,13 @@ public class EmemyMovement : MonoBehaviour
     private Vector3 positionRight = new Vector3(0.1f, 0, 0);
 
 
-    public int xDir = -1; // -1 = left, 1 = right
+    public int xEDir = -1; // -1 = left, 1 = right
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
        //rb = transform.GetComponent<Rigidbody2D>();
         parentRb = transform.parent.GetComponent<Rigidbody2D>();
-        parentRb.linearVelocity = new Vector2(xDir * movementSpeed, 0);
+        parentRb.linearVelocity = new Vector2(xEDir * movementSpeed, 0);
         
        
     }
@@ -28,12 +28,12 @@ public class EmemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //rb.linearVelocity = new Vector2(0, xDir * movementSpeed);
-        //parentRb.linearVelocity =  new Vector2(0, xDir * movementSpeed);
+        //rb.linearVelocity = new Vector2(0, xEDir * movementSpeed);
+        //parentRb.linearVelocity =  new Vector2(0, xEDir * movementSpeed);
     
-        parentRb.linearVelocity = new Vector2(xDir * movementSpeed, parentRb.linearVelocity.y);
+        parentRb.linearVelocity = new Vector2(xEDir * movementSpeed, parentRb.linearVelocity.y);
 
-        //movementDirection = new Vector2(movementSpeed*xDir, 0f); 
+        //movementDirection = new Vector2(movementSpeed*xEDir, 0f); 
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -53,25 +53,7 @@ public class EmemyMovement : MonoBehaviour
                 }
             }
             
-            xDir *= -1;
-            //rb.linearVelocity = new Vector2(xDir * movementSpeed, 0);
-            // parentRb.linearVelocity = new Vector2(xDir * movementSpeed, 0);
-            //transform.Translate(Vector3.up * 100);
-            //transform.parent.Translate(Vector3.up * 5);
-            
-            //transform.parent
-
-            // Perform actions like playing sound, loading scene, etc.
-            //Vector3 parentPosition = transform.parent.position
-
+            xEDir *= -1;
         }
     }
-
-
-    /*
-    ontriggerenter
-
-
-
-    */
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 public class BossMovement : MonoBehaviour
 {
     public EmemyMovement enemymovement; 
+    public DrierMovement driermovement; 
     private int bossState = 1;
     private float movementSpeed = 2f;
     public GameObject Player;
@@ -17,23 +18,20 @@ public class BossMovement : MonoBehaviour
     private int jumpNum = 0;
     private bool bossJumping = false;
 
-
     private Rigidbody2D parentRb;
-
 
     public GameObject EnemyBOSS;
     public GameObject DrierEnemyBOSS;
 
-
-
-
-    private int xDir = -1; // -1 = left, 1 = right
+    private int xDDir = -1; // -1 = left, 1 = right
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         parentRb = transform.parent.GetComponent<Rigidbody2D>();
         Player = GameObject.FindWithTag("Player");
         enemymovement = GameObject.FindWithTag("Enemy").GetComponent<EmemyMovement>();
+        driermovement = GameObject.FindWithTag("DrierEnemy").GetComponent<DrierMovement>();
+
         EnemyBOSS = GameObject.FindWithTag("Enemy").transform.parent.gameObject;
         DrierEnemyBOSS = GameObject.FindWithTag("DrierEnemy").transform.parent.gameObject;
         
@@ -45,15 +43,13 @@ public class BossMovement : MonoBehaviour
     {    
         if(stage1 == true && bossState == 1)
         {
-            parentRb.linearVelocity = new Vector2(xDir * movementSpeed, parentRb.linearVelocity.y);
+            parentRb.linearVelocity = new Vector2(xDDir * movementSpeed, parentRb.linearVelocity.y);
         }
         if((stage2 == false && bossState == 2) || (stage3 == false && bossState == 3))
         {
             parentRb.linearVelocity = new Vector2(0,0);
 
-
             float distance = Vector2.Distance(transform.position, stopAtPosition);
-
 
             if (distance > 0.1f) {
                 transform.parent.position = Vector2.MoveTowards(transform.position, stopAtPosition, 2f * Time.deltaTime);
@@ -68,14 +64,9 @@ public class BossMovement : MonoBehaviour
                 stage3 = true;
                 InvokeRepeating("bossJump2", 3.0f, 10.0f);
                 jumpNum = 0;
-
-
             }
-
-
         }
     }
-
 
     void bossJump()
     {
@@ -127,9 +118,8 @@ public class BossMovement : MonoBehaviour
     void spawnRandEnemy()
     {
         float random = UnityEngine.Random.value;
-        random = 0;
-
-        Vector3 leftV = new Vector3(10, -4, 0);
+        random = 1;
+        Vector3 leftV = new Vector3(10, 0, 0);
 
         int targetDir = 1; //right
         if (Player != null && Player.transform.position.x < transform.parent.position.x)
@@ -146,19 +136,27 @@ public class BossMovement : MonoBehaviour
         {
            clone = Instantiate(DrierEnemyBOSS, transform.parent.position + leftV, transform.rotation);
         }
-        Rigidbody2D rb = clone.GetComponent<Rigidbody2D>();
+        /*Rigidbody2D rb = clone.GetComponent<Rigidbody2D>();
 
         if (rb != null)
         {
             rb.gravityScale = 0;
-        }
-        EmemyMovement cloneMovement = clone.GetComponentInChildren<EmemyMovement>();
+        }*/
 
-        if (cloneMovement != null)
+        
+        if(random > 0.5)
         {
-            cloneMovement.xDir = targetDir;
+            EmemyMovement cloneMovement = clone.GetComponentInChildren<EmemyMovement>();
+
+            cloneMovement.xEDir = targetDir;
         }
-        clone.transform.position += new Vector3(0, 10, 0);
+        else{
+            DrierMovement cloneMovement = clone.GetComponentInChildren<DrierMovement>();
+
+            cloneMovement.xDDir = targetDir;
+        }
+        
+        //clone.transform.position += new Vector3(0, 10, 0);
 
     }
 
@@ -171,7 +169,7 @@ public class BossMovement : MonoBehaviour
         {  
             if(bossState == 1)
             {  
-                xDir *= -1;
+                xDDir *= -1;
                 spawnRandEnemy();
             }
         }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DrierMovement : MonoBehaviour
 {
-    private float movementSpeed = 2.5f;
+    private float movementSpeed = 4f;
 
     private Vector2 movementDirection;
 
@@ -13,17 +13,19 @@ public class DrierMovement : MonoBehaviour
     private Vector3 positionRight = new Vector3(0.1f, 0, 0);
 
 
-    private int xDir = -1; // -1 = left, 1 = right
+    public int xDDir = -1; // -1 = left, 1 = right
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         parentRb = transform.parent.GetComponent<Rigidbody2D>();
+        parentRb.linearVelocity = new Vector2(xDDir * movementSpeed, 0);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        parentRb.linearVelocity = new Vector2(xDir * movementSpeed, parentRb.linearVelocity.y);
+        parentRb.linearVelocity = new Vector2(xDDir * movementSpeed, parentRb.linearVelocity.y);
    }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -43,7 +45,7 @@ public class DrierMovement : MonoBehaviour
                 }
             }
             
-            xDir *= -1;
+            xDDir *= -1;
             
 
         }
