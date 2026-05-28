@@ -119,6 +119,11 @@ public class BossMovement : MonoBehaviour
         if(jumpNum % 3 == 0 || jumpNum % 3 == 1)
         {        
             bossRb.linearVelocity = new Vector2(Random.Range(-6, 6), Random.Range(15, 20));
+
+            if(jumpNum % 3 == 0 && jumpNum > 2)
+            {
+                spawnTidPod();
+            }
         }
         else if(jumpNum % 3 == 1)
         {
@@ -132,7 +137,6 @@ public class BossMovement : MonoBehaviour
                 Destroy(currentTidePod);
                 currentTidePod = null;
             }
-            spawnTidPod();
         }
         jumpNum += 1;
 
