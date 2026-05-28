@@ -27,12 +27,13 @@ public class DrierMovement : MonoBehaviour
     {
         parentRb.linearVelocity = new Vector2(xDDir * movementSpeed, parentRb.linearVelocity.y);
    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Check if the object that entered has a specific tag
-        if (other.gameObject.CompareTag("Floor"))// (enemy.CompareTag("floor"))
+        //checks if the New Enemy collided with the Floor
+        if (other.gameObject.CompareTag("Floor"))
         {
-            //Debug.Log("Drier Movement ");
+            //swaps the positions of the two colliders 
             foreach (Transform child in transform.parent)
             {
                 if (child.transform.localPosition == positionLeft)
@@ -44,10 +45,8 @@ public class DrierMovement : MonoBehaviour
                     child.transform.localPosition = positionLeft;
                 }
             }
-            
+            //changes the direction of the New Enemy
             xDDir *= -1;
-            
-
         }
     }
 
