@@ -142,7 +142,6 @@ public class BossMovement : MonoBehaviour
     void spawnRandEnemy()
     {
         float random = UnityEngine.Random.value;
-        random = 1;
         Vector3 leftV = new Vector3(10, 0, 0);
 
         int targetDir = 1; //right
@@ -158,7 +157,7 @@ public class BossMovement : MonoBehaviour
         }
         else
         {
-           clone = Instantiate(DrierEnemyBOSS, bossTransform.position + leftV, transform.rotation);
+           clone = Instantiate(DrierEnemyBOSS, bossTransform.position + leftV - new Vector3(0, 5, 0), transform.rotation);
         }
         
         if(random > 0.5)
@@ -227,7 +226,7 @@ public class BossMovement : MonoBehaviour
             bossJumping = false;
 
         }
-        if(other.gameObject.CompareTag("Enemy"))
+        if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("DrierEnemy"))
         {
             Destroy(other.gameObject);
         }

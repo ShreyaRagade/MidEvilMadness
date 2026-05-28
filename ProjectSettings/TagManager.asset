@@ -18,7 +18,8 @@ TagManager:
   - Boss
   - HitTidePod
   - missile
-  - LeftSpikeWave
+  - leftSpikeWave
+  - rightSpikeWave
   layers:
   - Default
   - TransparentFX

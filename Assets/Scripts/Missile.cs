@@ -18,7 +18,7 @@ public class Missile : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision){
-        if (collision.gameObject.CompareTag("") || collision.gameObject.CompareTag("DrierEnemy") || collision.gameObject.CompareTag("Enemy")) {
+        if (collision.gameObject.CompareTag("DrierEnemy") || collision.gameObject.CompareTag("Enemy")) {
             //Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
         }
         if (collision.gameObject.CompareTag("Floor"))
