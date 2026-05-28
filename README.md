@@ -4,9 +4,9 @@ We are doing work in the Unity engine and pushing our changes to Github.
 
 -----------------------------------------------------------------
 
-Download Unity and Github
+Download Unity and Github desktop
 
-...all the rest of that get help with that later
+Clone the repository from Github Desktop, and then open it in Unity
 ------------------------------------------------------------------
 we are currently working on polishing the levels and enemies we have done already.
 
