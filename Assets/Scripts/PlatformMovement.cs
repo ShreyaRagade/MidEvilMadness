@@ -26,10 +26,12 @@ public class MovingPlatform : MonoBehaviour
         // 1. Move the platform safely using physics velocities
         if (vert) 
         {
+            //Moves the platform vertically, while maintaining its current horizontal velocity
             parentRb.linearVelocity = new Vector2(parentRb.linearVelocity.x, xDir * movementSpeed);
         } 
         else if (horz) 
         {
+            //Moves the platform horizontally, while maintaining its current vertical velocity
             parentRb.linearVelocity = new Vector2(xDir * movementSpeed, parentRb.linearVelocity.y);
         }
 

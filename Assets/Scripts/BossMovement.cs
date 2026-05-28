@@ -14,7 +14,7 @@ public class BossMovement : MonoBehaviour
 
 
     private Vector2 movementDirection;
-    public Vector2 stopAtPosition = new Vector2(0, -10.95372f);
+    public Vector2 stopAtPosition = new Vector2(1, -10.5f);
     private bool stage1 = true;
     private bool stage2 = false;
     private bool stage3 = false;
@@ -60,9 +60,9 @@ public class BossMovement : MonoBehaviour
         {
             bossRb.linearVelocity = new Vector2(0,0);
 
-            float distance = Vector2.Distance(transform.position, stopAtPosition);
+            float distance = Vector2.Distance(bossTransform.position, stopAtPosition);
 
-            if (distance > 0.1f) {
+            if (distance > 0.5f) {
                 bossTransform.position = Vector2.MoveTowards(transform.position, stopAtPosition, 2f * Time.deltaTime);
             }
             else if(stage2 == false){
@@ -234,6 +234,10 @@ public class BossMovement : MonoBehaviour
         {
             //kill player
         }
+        // if(other.gameObject.CompareTag("Martyrdom"))
+        // {
+        //     Destroy(other.gameObject);
+        // }
     }
 
     void spawnTidPod()

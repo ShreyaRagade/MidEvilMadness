@@ -457,7 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35cc66aedb1876e4e90b350a816823ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  healthAmount: 90
+  healthAmount: 100
   MaxHealth: 100
 --- !u!95 &1156709049520200090
 Animator:

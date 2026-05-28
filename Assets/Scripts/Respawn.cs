@@ -10,6 +10,8 @@ public class Respawn : MonoBehaviour
     void Start()
     {
         playerHealth = Health.HealthInstance.healthAmount;
+        Player = GameObject.FindWithTag("Player");
+        respawnPoint = GameObject.FindWithTag("Respawn").transform;
     }
 
     // Update is called once per frame
