@@ -13,3 +13,4 @@ we are currently working on polishing the levels and enemies we have done alread
 need to work on:
 - bug fixes
 - level design
+- boss design
