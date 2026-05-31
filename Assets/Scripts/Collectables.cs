@@ -9,15 +9,22 @@ public class Collectables : MonoBehaviour
     private bool tidePodCollected = false;
     private Vector2 tidePodTarget;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        bossMovement = GameObject.FindWithTag("Boss").GetComponent<BossMovement>();
-    }
     
+    private bool initialized = false;
 
     // Update is called once per frame
     void Update()
     {
+        if (!initialized)
+        {
+            var boss = GameObject.FindWithTag("Boss");
+            if (boss != null)
+            {
+                bossMovement = boss.GetComponent<BossMovement>();
+                initialized = true;
+            }
+        }
+
         if (tidePodCollected)
         {
             tidePodTarget = bossMovement.transform.position;

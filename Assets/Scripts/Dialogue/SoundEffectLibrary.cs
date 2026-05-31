@@ -23,7 +23,6 @@ public class SoundEffectLibrary : MonoBehaviour
 
         }
     }
-
     public AudioClip GetRandomClip(string name)
     {
 
@@ -35,22 +34,14 @@ public class SoundEffectLibrary : MonoBehaviour
                 return audioClips[UnityEngine.Random.Range(0, audioClips.Count)];
 
             }
-
-
-
         }
 
         return null;
-
     }
-
     [System.Serializable]
     public struct SoundEffectGroup
-    {
-
+    { 
         public string name;
         public List<AudioClip> audioClips;
-
-
     }
 }

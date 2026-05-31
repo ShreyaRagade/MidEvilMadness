@@ -3,14 +3,12 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
+
+
 public class MenuController : MonoBehaviour
 {
     public GameObject menuCanvas;
     
-
-    [SerializeField] private GameObject arrow;
-
-
     public static MenuController Instance { get; private set; }
 
     private void Awake()
@@ -36,18 +34,27 @@ public class MenuController : MonoBehaviour
 
     void Update()
     {
+      
         //if (PlayerInputManager.instance.MenuOpenCloseInput)
         //{
 
-            if (!menuCanvas.activeSelf && PauseController.IsGamePaused)
+        if (Keyboard.current.tabKey.wasPressedThisFrame)
+            {
+            if (!menuCanvas.activeSelf && PauseController.IsGamePaused || EventSystem.current.currentSelectedGameObject != null)
             {
                 return;
             }
-            menuCanvas.SetActive(!menuCanvas.activeSelf); //what the menu canvas currently isn't
-            EventSystem.current.SetSelectedGameObject(arrow);
 
-
+            menuCanvas.SetActive(!menuCanvas.activeSelf);
             PauseController.SetPause(menuCanvas.activeSelf);
+        }
+
+           
+            ////what the menu canvas currently isn't
+            //EventSystem.current.SetSelectedGameObject(arrow);
+
+
+            //PauseController.SetPause(menuCanvas.activeSelf);
         }
     //}
 }

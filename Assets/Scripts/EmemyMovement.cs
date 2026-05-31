@@ -31,6 +31,10 @@ public class EmemyMovement : MonoBehaviour
         //rb.linearVelocity = new Vector2(0, xEDir * movementSpeed);
         //parentRb.linearVelocity =  new Vector2(0, xEDir * movementSpeed);
     
+        if (PauseController.IsGamePaused)
+        {
+            return;
+        }
         parentRb.linearVelocity = new Vector2(xEDir * movementSpeed, parentRb.linearVelocity.y);
 
         //movementDirection = new Vector2(movementSpeed*xEDir, 0f); 

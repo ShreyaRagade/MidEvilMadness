@@ -38,6 +38,8 @@ public class Movement : MonoBehaviour
     }
     void Update()
     {
+        if (PauseController.IsGamePaused) return;
+        
         rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
         Flip();
         bool grounded = isGrounded();

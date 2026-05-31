@@ -8,6 +8,7 @@ public class PauseController : MonoBehaviour
     {
 
         IsGamePaused = pause;
+        Time.timeScale = pause ? 0f : 1f;
 
     }
 

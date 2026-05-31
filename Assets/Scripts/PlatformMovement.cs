@@ -23,22 +23,28 @@ public class MovingPlatform : MonoBehaviour
 
     void FixedUpdate()
     {
-        // 1. Move the platform safely using physics velocities
-        if (vert) 
+        if (PauseController.IsGamePaused)
         {
-            parentRb.linearVelocity = new Vector2(parentRb.linearVelocity.x, xDir * movementSpeed);
-        } 
-        else if (horz) 
-        {
-            parentRb.linearVelocity = new Vector2(xDir * movementSpeed, parentRb.linearVelocity.y);
+            return;
         }
+            // 1. Move the platform safely using physics velocities
+            if (vert)
+            {
+                parentRb.linearVelocity = new Vector2(parentRb.linearVelocity.x, xDir * movementSpeed);
+            }
+            else if (horz)
+            {
+                parentRb.linearVelocity = new Vector2(xDir * movementSpeed, parentRb.linearVelocity.y);
+            }
 
-        // 2. Safely apply platform velocity adjustments to the player while riding
-        if (playerOnPlatform && playerRb != null && horz)
-        {
-            // Set horizontal velocity directly to match the platform, maintaining the player's original vertical gravity/fall speed
-            playerRb.linearVelocity += parentRb.linearVelocity;
-        }
+            // 2. Safely apply platform velocity adjustments to the player while riding
+            if (playerOnPlatform && playerRb != null && horz)
+            {
+                // Set horizontal velocity directly to match the platform, maintaining the player's original vertical gravity/fall speed
+                playerRb.linearVelocity += parentRb.linearVelocity;
+            }
+        
+       
     }
 
     void OnTriggerEnter2D(Collider2D other) 
