@@ -9,12 +9,19 @@ Once both are downloaded, you can open the Hub to see all the projects you will 
 **Setting Up Project and GitHub Sync**
 ------------------------------------------------------------------
 Go to the main GitHub Page for MildEvilMadness, and clone the repository via SSH. 
+
 Make a Github Account if you don’t have one already (different from GitLab!)
+
 For the most seamless experience, Download GitHub Desktop as it is very difficult to configure the gitignore via the command line only. 
+
 Login to your Github account on Desktop.
+
 Make a Repository in GitHub named accordingly and set gitignore to “Unity.” There should now be a "GitHub" file in your File Explorer with a folder containing the name of the repository that you just created. Ensure Unity Project is in the right GitHub File in your File Explorer. Then Everything should show up. Commit on the bottom left hand corner. **This is the only time you will use GitHub Desktop. You should be able to link your GitHub account with your own personal Command Line in order to make changes to the repository in the future**
+
 WARNING. There should be a gitignore file in the Home Directory of the project (There should already be one). But in case there isn’t, look up “gitignore unity file” online and copy paste that into the Home Directory. (Or find the gitignore file and copy-paste it into the right spot). This makes sure that all the temporary Unity files aren’t included when you Push, because they aren’t needed - Unity generates them automatically when you open the project. If you open Github Desktop and see something like 22000+ files need to be pushed, your gitignore is MISSING! Do NOT commit those files! 
+
 Then, push to the branch (should show up in the middle of the screen)
+
 To open the project in Unity itself, open the Unity Hub and hit "Add." When your file explorer opens, click on the folder of the Repository you just made. 
 You can then open the project in Unity. It will take some time to load due to the game's many files. 
 
