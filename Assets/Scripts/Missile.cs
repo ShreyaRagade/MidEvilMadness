@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Martyrdom : MonoBehaviour
+public class Missile : MonoBehaviour
 {
     private Vector2 movementDirection;
 
@@ -14,19 +14,14 @@ public class Martyrdom : MonoBehaviour
     void Start()
     {
         parentRb = GetComponent<Rigidbody2D>();   
-        if(gameObject.tag != "missile")
-        {
-            parentRb.linearVelocity = new Vector2(0, martyrdomUpVelocity);
-        }
         justMade = true;
-        //martyrdomUpVelocity = 10f;
     }
 
     void OnCollisionEnter2D(Collision2D collision){
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("DrierEnemy") || collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("missile")) {
-            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+        if (collision.gameObject.CompareTag("DrierEnemy") || collision.gameObject.CompareTag("Enemy")) {
+            //Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
         }
-        if (collision.gameObject.CompareTag("Floor") && parentRb.linearVelocity.y <= 0f)
+        if (collision.gameObject.CompareTag("Floor"))
         {
             Debug.Log("boomish!");
             GameObject clone = Instantiate(targetObject, transform.position, transform.rotation);
