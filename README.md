@@ -32,7 +32,8 @@ Go To Secrets and create Repository Secret titled GITLAB_TOKEN
 Create this yaml file with proper adjustment at the REMOTE part titled sync.yml exactly and add to main (home) part of the GitHub repo
 
 When naming the file - paste this: 
-'''.github/workflows/sync.yml
+'''
+.github/workflows/sync.yml
 name: Sync to GitLab
 on: [push, delete]
 jobs:
@@ -45,7 +46,8 @@ jobs:
       - uses: yesolutions/mirror-action@master
         with:
           REMOTE: "https://oauth2:${{ secrets.GITLAB_TOKEN }} @gitlab.cci.drexel.edu/sr3745/NewGameTest.git"
-          GIT_PUSH_ARGS: "--tags --force --prune"'''
+          GIT_PUSH_ARGS: "--tags --force --prune"
+'''
 
 Now Commit and everything should update. 
 
