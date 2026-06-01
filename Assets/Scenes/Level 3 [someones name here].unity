@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a591c63cb35ff7248bd69443ebdac909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectables
-  audioPlayer: {fileID: 21576457}
+  audioPlayer: {fileID: 1399430054}
   bossMovement: {fileID: 0}
   tidePodDriftSpeed: 0.2
 --- !u!212 &21576459
@@ -834,7 +834,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: c32594d54efd1614badaf622ac444821, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -945,7 +945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a591c63cb35ff7248bd69443ebdac909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectables
-  audioPlayer: {fileID: 41017823}
+  audioPlayer: {fileID: 1399430054}
   bossMovement: {fileID: 0}
   tidePodDriftSpeed: 0.2
 --- !u!212 &41017825
@@ -2478,7 +2478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a591c63cb35ff7248bd69443ebdac909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectables
-  audioPlayer: {fileID: 556616501}
+  audioPlayer: {fileID: 1399430054}
   bossMovement: {fileID: 0}
   tidePodDriftSpeed: 0.2
 --- !u!114 &556616501
@@ -2542,7 +2542,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: c32594d54efd1614badaf622ac444821, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3308,7 +3308,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: c32594d54efd1614badaf622ac444821, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3419,7 +3419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a591c63cb35ff7248bd69443ebdac909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectables
-  audioPlayer: {fileID: 748286389}
+  audioPlayer: {fileID: 1399430054}
   bossMovement: {fileID: 0}
   tidePodDriftSpeed: 0.2
 --- !u!212 &748286391
@@ -9618,7 +9618,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: c32594d54efd1614badaf622ac444821, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -9729,7 +9729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a591c63cb35ff7248bd69443ebdac909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectables
-  audioPlayer: {fileID: 1369542053}
+  audioPlayer: {fileID: 1399430054}
   bossMovement: {fileID: 0}
   tidePodDriftSpeed: 0.2
 --- !u!212 &1369542055
@@ -9914,6 +9914,149 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371915363}
   m_CullTransparentMesh: 1
+--- !u!1 &1399430053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1399430056}
+  - component: {fileID: 1399430055}
+  - component: {fileID: 1399430054}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1399430054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399430053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a805bb2f12c3e74cb83669360572cae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioPlayer
+  soundEffectClip: {fileID: 8300000, guid: c32594d54efd1614badaf622ac444821, type: 3}
+--- !u!82 &1399430055
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399430053}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1399430056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399430053}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.05445, y: -2.27418, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1463749802
 GameObject:
   m_ObjectHideFlags: 0
@@ -10389,7 +10532,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: c32594d54efd1614badaf622ac444821, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -10500,7 +10643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a591c63cb35ff7248bd69443ebdac909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectables
-  audioPlayer: {fileID: 1549298195}
+  audioPlayer: {fileID: 1399430054}
   bossMovement: {fileID: 0}
   tidePodDriftSpeed: 0.2
 --- !u!212 &1549298197
@@ -10891,7 +11034,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: c32594d54efd1614badaf622ac444821, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -11002,7 +11145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a591c63cb35ff7248bd69443ebdac909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectables
-  audioPlayer: {fileID: 1648247445}
+  audioPlayer: {fileID: 1399430054}
   bossMovement: {fileID: 0}
   tidePodDriftSpeed: 0.2
 --- !u!212 &1648247447
@@ -12971,3 +13114,4 @@ SceneRoots:
   - {fileID: 1921620326}
   - {fileID: 713001998}
   - {fileID: 170089788}
+  - {fileID: 1399430056}
