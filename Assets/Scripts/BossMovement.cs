@@ -238,10 +238,10 @@ public class BossMovement : MonoBehaviour
         {
             //kill player
         }
-        // if(other.gameObject.CompareTag("Martyrdom"))
-        // {
-        //     Destroy(other.gameObject);
-        // }
+        if(other.gameObject.CompareTag("Martyrdom") || other.gameObject.CompareTag("missile"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 
     void spawnTidPod()
@@ -280,7 +280,7 @@ public class BossMovement : MonoBehaviour
 
             Vector2 newVelocity = new Vector2(side * Mathf.Cos(radians), Mathf.Sin(radians)) * speed;
 
-            GameObject missileClone = Instantiate(AirRaidMissile, bossTransform.position + new Vector3(0, 7, 0), transform.rotation);
+            GameObject missileClone = Instantiate(AirRaidMissile, bossTransform.position + new Vector3(0, 8, 0), transform.rotation);
 
             Rigidbody2D missileRb = missileClone.GetComponentInChildren<Rigidbody2D>();
 
