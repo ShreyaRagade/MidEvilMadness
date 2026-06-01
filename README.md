@@ -3,7 +3,9 @@ README
 **Setting Up Unity**
 ------------------------------------------------------------------
 Go to the Unity Store and download Unity Version 6.000.3.5f1.
+
 If you do not already have the Unity Hub, download the most recent version of the Hub as well (will not affect anything within the project). This is what you will use to access Unity itself. 
+
 Once both are downloaded, you can open the Hub to see all the projects you will work on. You are now ready to set up the project. 
 
 **Setting Up Project and GitHub Sync**
@@ -63,6 +65,7 @@ Note that your personal access token will likely expire eventually, so to fix th
 **Problems With Version Control: Scene Merge Conflicts**
 ------------------------------------------------------------------
 If you are ever making changes to a project  and Unity happens to crash before you get the chance to save, it is likely that when you attempt to re-open the project, Unity will ask you if you want to Recover the changes you made. 
+
 While you can choose to do this if you want, note that it will cause problems if you attempt to pull files later on / merge changes, etc. Because within Unity you are not only making changes to the program but also to the Scenes, Scene Conflicts are a lot more difficult to resolve and the  exact course of action is very specific to the changes you have made. Unless you have made major changes, it is often better to not retrieve your unsaved changes and instead manually re-do them within the scene to avoid Scene Merge Conflicts. 
 
 **Problems With Unity: DPC Watchdog Violation**
