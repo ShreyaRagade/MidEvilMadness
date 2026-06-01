@@ -32,7 +32,7 @@ Go To Secrets and create Repository Secret titled GITLAB_TOKEN
 Create this yaml file with proper adjustment at the REMOTE part titled sync.yml exactly and add to main (home) part of the GitHub repo
 
 When naming the file - paste this: 
-'''
+'''yaml
 .github/workflows/sync.yml
 name: Sync to GitLab
 on: [push, delete]
