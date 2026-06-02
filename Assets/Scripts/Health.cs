@@ -16,4 +16,9 @@ public class Health: MonoBehaviour
     {
     
     }
+
+    private void Update() 
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 }

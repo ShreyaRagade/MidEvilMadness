@@ -73,11 +73,16 @@ public class MovingPlatform : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other) 
     {
-        if (other.gameObject.CompareTag("Player")) 
+        if(gameObject.name.Equals("up movement"))
         {
-            other.transform.SetParent(null);
-            playerOnPlatform = false;
-            playerRb = null;
+            
+        }else{
+            if (other.gameObject.CompareTag("Player")) 
+            {
+                other.transform.SetParent(null);
+                playerOnPlatform = false;
+                playerRb = null;
+            }
         }
     }
 }

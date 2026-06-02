@@ -11690,7 +11690,7 @@ GameObject:
   - component: {fileID: 1774441906}
   - component: {fileID: 1774441905}
   m_Layer: 0
-  m_Name: 'Enemy Wall and Attack Collider '
+  m_Name: up movement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
