@@ -10,7 +10,7 @@ Once both are downloaded, you can open the Hub to see all the projects you will 
 
 **Setting Up Project and GitHub Sync**
 ------------------------------------------------------------------
-Go to the main GitHub Page for MildEvilMadness (branch: main), and clone the repository via SSH. 
+Go to the main GitHub Page for MildEvilMadness (branch: Final-Game), and clone the repository via SSH. 
 
 Make a Github Account if you don’t have one already (different from GitLab!)
 
